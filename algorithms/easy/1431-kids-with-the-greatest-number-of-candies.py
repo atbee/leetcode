@@ -43,3 +43,10 @@ class Solution:
             output.append(candy + extraCandies >= maxCandies)
 
         return output
+
+    def kidsWithMinRequiredCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        minRequiredCandies = max(candies) - extraCandies
+        for i, candy in enumerate(candies):
+            candies[i] = candy >= minRequiredCandies
+
+        return candies
